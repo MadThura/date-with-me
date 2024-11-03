@@ -1,11 +1,15 @@
 <script setup>
 import Aside from '@/components/Aside.vue';
-import Main from '@/components/Main.vue';
-import Matches from '@/components/Matches.vue';
+import Main from '@/components/Main.vue'
+import ProfileCard from '@/components/ProfileCard.vue';
+
 </script>
+
 <template>
-    <Aside></Aside>
+    <Aside>
+        hiprofile
+    </Aside>
     <Main>
-        <Matches></Matches>
-    </Main>
+        <ProfileCard></ProfileCard>
+    </Main>  
 </template>

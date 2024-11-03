@@ -15,7 +15,6 @@ let navTo = (data) => {
 </script>
 
 <template>
-  <div class="home">
     <Aside>
       <MenuNav @navTo="navTo" :current="current"></MenuNav>
       <div v-if="current === 'matches'">
@@ -28,12 +27,8 @@ let navTo = (data) => {
     <Main>
       main
     </Main>
-  </div>
 </template>
 
 <style>
-.home {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
+
 </style>

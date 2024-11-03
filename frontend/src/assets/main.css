@@ -19,3 +19,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow: hidden;
 }
+
+#app {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
