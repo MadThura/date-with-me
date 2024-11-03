@@ -1,5 +1,5 @@
 <template>
-    <nav>
+    <nav class="main-nav">
         <a href="">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s"
                 alt="profile">
@@ -19,14 +19,14 @@
 </template>
 
 <style>
-nav {
+.main-nav {
     display: flex;
     justify-content: space-between;
     background-color: #e56b6b;
     padding: 25px 15px;
 }
 
-nav a {
+.main-nav a {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -35,17 +35,17 @@ nav a {
     border-radius: 30px;
 }
 
-h4 {
+.main-nav h4 {
     color: white;
     margin: 5px;
 }
 
-nav img {
+.main-nav img {
     width: 36px;
     border-radius: 50%;
 }
 
-button {
+.main-nav button {
     width: 44px;
     height: 44px;
     padding: 10px;
@@ -56,11 +56,11 @@ button {
     margin-right: 15px;
 }
 
-a:hover {
+.main-nav a:hover {
     background-color: black;
 }
 
-button:hover {
+.main-nav button:hover {
     background-color: #391A21;
     color: #e56b6b;
 }
