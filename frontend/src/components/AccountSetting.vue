@@ -1,4 +1,8 @@
-<script></script>
+<script setup>
+import RangeSlider from './RangeSlider.vue';
+import ToggleBtn from './ToggleBtn.vue';
+
+</script>
 
 <template>
     <div class="container">
@@ -18,6 +22,28 @@
                     chevron_right
                 </span>
             </p>
+        </div>
+        <h4>discovery settings</h4>
+        <div class="menuItem">
+            <h5>Location</h5>
+            <p>Yangon<span class="material-symbols-outlined">
+                    chevron_right
+                </span></p>
+        </div>
+        <div class="menuItem">
+            <h5>Distance Preference</h5>
+            <p>41 mi</p>
+            <RangeSlider></RangeSlider>
+        </div>
+        <div class="menuItem">
+            <h5>Looking for</h5>
+            <p>Women <span class="material-symbols-outlined">
+                    chevron_right
+                </span></p>
+        </div>
+        <div class="menuItem">
+            <h5>Global</h5>
+            <ToggleBtn></ToggleBtn>
         </div>
         <h4>Appearance</h4>
         <div class="menuItem">
@@ -56,6 +82,7 @@ h4 {
     background-color: white;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     border: 0.05px solid #80808063;
     cursor: pointer;
