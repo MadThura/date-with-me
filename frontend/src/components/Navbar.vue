@@ -1,10 +1,21 @@
+<script setup>
+import router from '@/router';
+
+let currentRoute = router.currentRoute.value.name;
+</script>
+
 <template>
     <nav class="main-nav">
-        <a href="">
+        <router-link v-if="currentRoute != 'Profile'" :to="{ name: 'Profile' }">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTF5-3YjBcXTqKUlOAeUUtuOLKgQSma2wGG1g&s"
                 alt="profile">
             <h4>John</h4>
-        </a>
+        </router-link>
+        <router-link class="back" v-if="currentRoute === 'Profile'" :to="{ name: 'Home' }">
+            <span class="material-symbols-outlined">
+                home
+            </span>
+        </router-link>
         <div>
             <button><span class="material-symbols-outlined">
                     explore
@@ -33,6 +44,18 @@
     padding: 5px;
     text-decoration: none;
     border-radius: 30px;
+    transition: 0.5s;
+}
+
+.main-nav .back{
+    border-radius: 50%;
+    background-color: #0000008f;
+    color: #e56b6b;
+    transition: padding 1s;
+}
+
+.main-nav .back span {
+    font-size: 30px;
 }
 
 .main-nav h4 {

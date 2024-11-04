@@ -15,6 +15,7 @@ const images = [
     'https://images.rawpixel.com/image_social_portrait/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsb2ZmaWNlMTBfZGVlcF9waW5lX2ZvcmVzdF9iYWNrZ3JvdW5kX19oaW50X29mX3ByZWNpc2lvbl9hMTRmMjkzNy1mZDM2LTQyMzQtYmI5MS1kMjMyZmQ5Njk3OTFfMS5qcGc.jpg',
     'https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsb2ZmaWNlOV9hX3ByaW50ZWRfaW1hZ2Vfb2ZfdGhlX3N0eWxlX29mX2xpbm9jdXRfcHJpbnRzX182MTllYzNlMC1hZjMxLTQxOGEtOWZjOS0zZjU0ZjgyYTNkZDlfMS5qcGc.jpg',
     'https://images.rawpixel.com/image_social_portrait/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTExL3Jhd3BpeGVsb2ZmaWNlMTBfZGVlcF9waW5lX2ZvcmVzdF9iYWNrZ3JvdW5kX19oaW50X29mX3ByZWNpc2lvbl9hMTRmMjkzNy1mZDM2LTQyMzQtYmI5MS1kMjMyZmQ5Njk3OTFfMS5qcGc.jpg',
+    'https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTEyL3Jhd3BpeGVsb2ZmaWNlOV9hX3ByaW50ZWRfaW1hZ2Vfb2ZfdGhlX3N0eWxlX29mX2xpbm9jdXRfcHJpbnRzX182MTllYzNlMC1hZjMxLTQxOGEtOWZjOS0zZjU0ZjgyYTNkZDlfMS5qcGc.jpg',
 ];
 
 const currentSlide = ref(0);
@@ -154,6 +155,7 @@ let handleTabClick = (index) => {
     z-index: 3;
     margin-right: 2px;
     cursor: pointer;
+    background-color: white;
 }
 
 .tab-container button.active {
