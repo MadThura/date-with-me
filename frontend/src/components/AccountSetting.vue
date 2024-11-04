@@ -36,6 +36,11 @@ import ToggleBtn from './ToggleBtn.vue';
             <RangeSlider></RangeSlider>
         </div>
         <div class="menuItem">
+            <h5>Age Preference</h5>
+            <p>18 - 25</p>
+            <RangeSlider></RangeSlider>
+        </div>
+        <div class="menuItem">
             <h5>Looking for</h5>
             <p>Women <span class="material-symbols-outlined">
                     chevron_right
@@ -71,9 +76,21 @@ import ToggleBtn from './ToggleBtn.vue';
 </template>
 
 <style scoped>
+.container {
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
 h4 {
     text-transform: uppercase;
     padding: 14px;
+    margin-top: 5px;
 }
 
 .menuItem {
