@@ -19,7 +19,8 @@ class MessageFactory extends Factory
         return [
             'sender_id' => random_int(1, 10),
             'receiver_id' => random_int(1, 10),
-            'content' => fake()->sentence()
+            'content' => fake()->sentence(),
+            'is_read' => fake()->boolean()
         ];
     }
 }
