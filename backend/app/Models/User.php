@@ -66,4 +66,26 @@ class User extends Authenticatable
     {
         return $this->hasOne(Setting::class);
     }
+
+    // Users who this user has liked
+    public function likesGiven()
+    {
+        return $this->hasMany(Like::class, 'user_id');
+    }
+
+    // Users who have liked this user
+    public function likesReceived()
+    {
+        return $this->hasMany(Like::class, 'liked_user_id');
+    }
+
+    public function blockedUsers()
+    {
+        return $this->hasMany(BlockedUser::class);
+    }
+
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Image;
+use App\Models\Like;
 use App\Models\Profile;
 use App\Models\Setting;
 use App\Models\User;
@@ -21,6 +22,8 @@ class DatabaseSeeder extends Seeder
             ->has(Image::factory(6))
             ->has(Setting::factory(1))
             ->create();
+
+        Like::factory(20)->create();
         // User::factory(10)->create();
         // User::factory()->create([
         //     'name' => 'Test User',
