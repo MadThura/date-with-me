@@ -7,10 +7,12 @@ import AccountSetting from '@/components/AccountSetting.vue';
 </script>
 
 <template>
-    <Aside>
-        <AccountSetting></AccountSetting>
-    </Aside>
-    <Main>
-        <ProfileCard></ProfileCard>
-    </Main>  
+    <div class="profile">
+        <Aside>
+            <AccountSetting></AccountSetting>
+        </Aside>
+        <Main>
+            <ProfileCard></ProfileCard>
+        </Main>
+    </div>
 </template>
