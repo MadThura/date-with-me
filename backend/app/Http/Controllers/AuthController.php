@@ -7,6 +7,7 @@ use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -39,21 +40,43 @@ class AuthController extends Controller
 
     public function login(LoginUserRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-
         try {
-            if (!Auth::attempt($credentials)) {
+            $user = User::where('email', $request->email)->first();
+            $isPasswordCorrect = Hash::check($request->password, $user->password);
+            if (!$isPasswordCorrect) {
                 return response()->json([
-                    'message' => 'Invalid email or password.'
+                    'message' => 'Incorrect Password'
                 ], 401);
             }
-            $user = Auth::user();
             $token = $user->createToken('user-token')->plainTextToken;
             return response()->json([
                 'message' => 'Login successful.',
                 'token' => $token,
                 'user' => $user
             ], 200);
+        } catch (Exception $e) {
+            return response()->json([
+                'error' => 'An unexpected error occurred.',
+                'details' => $e->getMessage(),
+            ], 500);
+        }
+    }
+
+    public function logout()
+    {
+        try {
+            $user = Auth::user();
+
+            if ($user) {
+                $user->currentAccessToken()->delete();
+
+                return response()->json([
+                    'message' => 'Logout successful.'
+                ], 200);
+            }
+            return response()->json([
+                'message' => 'No user is currently authenticated.'
+            ], 401);
         } catch (Exception $e) {
             return response()->json([
                 'error' => 'An unexpected error occurred.',

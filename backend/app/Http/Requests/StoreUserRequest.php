@@ -28,9 +28,16 @@ class StoreUserRequest extends FormRequest
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|max:25',
             'gender' => 'required',
-            'birthdate' => 'required',
+            'birthdate' => 'required|date|before:' . now()->subYear(18)->toDateString(),
             'location' => 'required',
             'bio' => 'max:500',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'birthdate.before' => "At least 18 years old."
         ];
     }
 
